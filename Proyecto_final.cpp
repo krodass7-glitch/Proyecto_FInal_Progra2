@@ -20,7 +20,7 @@ void mostarestudiantes() {
     while (getline(archivonombres, carnet, ',') && getline(archivonombres, nombre)) {
         
         ifstream archivoestudiantes("../estudiantes.txt");
-        string carnetEstudiante, status = "DESCONOCIDO"; // Inicializado por si no se encuentra
+        string carnetEstudiante, status = "DESCONOCIDO"; 
         
         if (archivoestudiantes.is_open()) {
             while (getline(archivoestudiantes, carnetEstudiante, ',') && getline(archivoestudiantes, status)) {
@@ -76,12 +76,12 @@ void buscarEstudiante() {
             Encontrado = true;
             
             ifstream archivoestudiantes("../estudiantes.txt");
-            string carnetEstudiante, status = "DESCONOCIDO"; // CORREGIDO: Ahora sí guarda el estado
+            string carnetEstudiante, status = "DESCONOCIDO"; 
             
             if (archivoestudiantes.is_open()) {
                 while (getline(archivoestudiantes, carnetEstudiante, ',') && getline(archivoestudiantes, status)) {
                     if (carnetEstudiante == carnet) {
-                        break; // CORREGIDO: Faltaba romper el ciclo al encontrar el estado
+                        break; 
                     }
                 }
                 archivoestudiantes.close(); 
@@ -112,7 +112,7 @@ void buscarEstudiante() {
             if (!tieneNotas) {
                 cout << "(No cuenta con registros de notas)\n";
             }
-            break; // Opcional: rompe el bucle principal de nombres ya que lo encontramos
+            break; 
         }
     }
     
